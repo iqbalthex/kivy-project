@@ -1,36 +1,27 @@
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
+from kivy.uix.widget import Widget
 
-class LoginPage(BoxLayout):
+class LoginPage(Widget):
   def __init__(self, **kwargs):
     super().__init__(**kwargs)
 
-    self.username_input = TextInput(multiline=False)
-    self.password_input = TextInput(multiline=False, password=True)
-    self.login_btn = Button(text="Login")
-    self.login_btn.bind(on_press=self.login)
+  def login(self):
+    username = self.username
+    password = self.password
 
-    self.add_widget(Label(text="Username: "))
-    self.add_widget(self.username_input)
-    self.add_widget(Label(text="Password: "))
-    self.add_widget(self.password_input)
+    # if username.text != "admin" or password.text != "password":
+      # return self.add_widget(Label(text="Login failed."))
 
-  def login(self, instance):
-    print(instance)
-    if self.username_input.text != "admin" or self.password_input.text != "password":
-      return self.add_widget(Label(text="Login failed."))
-
-    self.add_widget(Label(text="Login success."))
+    # self.add_widget(Label(text="Login success."))
 
 
-class MyApp(App):
+class GabutApp(App):
   def build(self):
     return LoginPage()
 
 
 if __name__ == "__main__":
-  my_app = MyApp()
-  my_app.run()
+  GabutApp().run()

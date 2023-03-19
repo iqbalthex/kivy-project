@@ -1,0 +1,55 @@
+<LoginPage>:
+    username: username
+    password: password
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            size_hint_y: None
+            text: "Selamat datang di Gabut App!"
+            font_size: 28
+
+        Label:
+            text: "Username"
+            size_hint_y: None
+            height: 30
+            font_size: 16
+            color: (0.4, 0.4, 0.4, 1)
+
+        TextInput:
+            id: username
+            # multiline: False
+            size_hint_y: None
+            height: 30
+            font_size: 16
+            background_color: (0.8, 0.8, 0.8, 1)
+            foreground_color: (0.2, 0.2, 0.2, 1)
+
+        Label:
+            text: "Password"
+            size_hint_y: None
+            height: 30
+            font_size: 16
+            color: (0.4, 0.4, 0.4, 1)
+        TextInput:
+            id: password
+            multiline: False
+            password: True
+            size_hint_y: None
+            height: 30
+            font_size: 16
+            background_color: (0.8, 0.8, 0.8, 1)
+            foreground_color: (0.2, 0.2, 0.2, 1)
+
+        Button:
+            text: "Login"
+            size_hint_y: None
+            height: 30
+            font_size: 16
+            background_color: (0.2, 0.6, 1, 1)
+            color: (1, 1, 1, 1)
+            on_press: root.login()
