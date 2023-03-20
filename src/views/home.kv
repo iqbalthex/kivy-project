@@ -1,4 +1,5 @@
 <Home>:
+    ## id halaman
     name: "home"
 
     BoxLayout:
@@ -8,22 +9,17 @@
         padding: 20
         spacing: 10
 
-        Label:
+        TitleLabel:
             text: "Welcome"
-            font_size: 28
 
         Button:
             text: "Login"
-            background_color: (0.2, 0.6, 1, 1)
-            color: (1, 1, 1, 1)
             on_press:
-                app.root.current = "login"
-                root.manager.transition.direction = "left"
+                app.root.to("login")
+                root.slide_to("left")
 
         Button:
             text: "Register"
-            background_color: (0.2, 0.6, 1, 1)
-            color: (1, 1, 1, 1)
             on_press:
-                app.root.current = "register"
-                root.manager.transition.direction = "right"
+                app.root.to("register")
+                root.slide_to("right")

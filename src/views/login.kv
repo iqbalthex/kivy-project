@@ -10,9 +10,8 @@
         padding: 20
         spacing: 10
 
-        Label:
+        TitleLabel:
             text: "Login Form"
-            font_size: 28
 
         Label:
             text: "Username"
@@ -27,13 +26,10 @@
 
         Button:
             text: "Login"
-            background_color: (0.2, 0.6, 1, 1)
-            color: (1, 1, 1, 1)
+            on_press: root.login()
 
         Button:
             text: "Home"
-            background_color: (0.2, 0.6, 1, 1)
-            color: (1, 1, 1, 1)
             on_release:
-                app.root.current = "home"
-                root.manager.transition.direction = "right"
+                app.root.to("home")
+                root.slide_to("right")

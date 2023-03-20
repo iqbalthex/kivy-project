@@ -7,6 +7,12 @@ class Register(Screen):
   username_input = ObjectProperty()
   password_input = ObjectProperty()
 
+  def slide_to(self, direction):
+    """
+    Method untuk mengatur arah transisi.
+    """
+    self.manager.transition.direction = direction
+
   def register(self):
     print(self.username_input.text)
     print(self.password_input.text)
