@@ -1,0 +1,29 @@
+## impor komponen disini
+
+#:import Home     controllers.home_controller
+#:import Login    controllers.login_controller
+#:import Register controllers.register_controller
+
+## properti utama
+<Label, TextInput, Button>:
+    size_hint_y: None
+    height: 30
+    font_size: 16
+
+<Label>:
+    color: (0.6, 0.6, 0.6, 1)
+
+<TextInput>:
+    multiline: False
+    background_color: (0.8, 0.8, 0.8, 1)
+    foreground_color: (0.2, 0.2, 0.2, 1)
+
+<Button>:
+    background_normal: ""
+
+## struktur tampilan aplikasi
+## (setiap class di dalam <Main> mewakili halaman aplikasi)
+<Main>:
+    Home
+    Login
+    Register

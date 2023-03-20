@@ -1,24 +1,21 @@
+# from database import users
 from kivy.app import App
-from kivy.uix.widget import Widget
+from kivy.core.window import Window
+from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
 
-Builder.load_file("../layout/login.kv")
 
-class LoginPage(Widget):
-  def login(self):
-    username = self.username
-    password = self.password
-
-    # if username.text != "admin" or password.text != "password":
-      # return self.add_widget(Label(text="Login failed."))
-
-    # self.add_widget(Label(text="Login success."))
+class Main(ScreenManager):
+  pass
 
 
 class GabutApp(App):
   def build(self):
-    return LoginPage()
+    return Main()
 
+
+Window.size = (400, 600)
+Builder.load_file("./main.kv")
 
 if __name__ == "__main__":
   GabutApp().run()

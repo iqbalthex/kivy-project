@@ -1,0 +1,39 @@
+<Login>:
+    name: "login"
+    username_input: username_input
+    password_input: password_input
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        center_y: root.height
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Login Form"
+            font_size: 28
+
+        Label:
+            text: "Username"
+        TextInput:
+            id: username_input
+
+        Label:
+            text: "Password"
+        TextInput:
+            id: password_input
+            password: True
+
+        Button:
+            text: "Login"
+            background_color: (0.2, 0.6, 1, 1)
+            color: (1, 1, 1, 1)
+
+        Button:
+            text: "Home"
+            background_color: (0.2, 0.6, 1, 1)
+            color: (1, 1, 1, 1)
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"

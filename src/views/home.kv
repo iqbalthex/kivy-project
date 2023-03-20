@@ -1,0 +1,29 @@
+<Home>:
+    name: "home"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        center_y: root.height
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Welcome"
+            font_size: 28
+
+        Button:
+            text: "Login"
+            background_color: (0.2, 0.6, 1, 1)
+            color: (1, 1, 1, 1)
+            on_press:
+                app.root.current = "login"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Register"
+            background_color: (0.2, 0.6, 1, 1)
+            color: (1, 1, 1, 1)
+            on_press:
+                app.root.current = "register"
+                root.manager.transition.direction = "right"
