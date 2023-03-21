@@ -1,0 +1,39 @@
+<MenuItem@BoxLayout>:
+    orientation: "vertical"
+    size_hint_y: None
+
+<DefaultImage@Image>:
+    source: "img/default.jpg"
+
+<Menu>:
+    ## id halaman
+    name: "menu"
+
+    GridLayout:
+        size: root.width, root.height
+        padding: 20
+        spacing: 10
+        cols: 3
+
+        MenuItem:
+            Image:
+                source: "img/menu/mal.jpg"
+            Label:
+                text: "menu 1"
+        MenuItem:
+            DefaultImage
+            Label:
+                text: "menu 2"
+        MenuItem:
+            DefaultImage
+            Label:
+                text: "menu 3"
+
+        MenuItem:
+            DefaultImage
+            Label:
+                text: "menu 4"
+        MenuItem:
+            DefaultImage
+            Label:
+                text: "menu 5"

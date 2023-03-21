@@ -14,7 +14,7 @@ class Login(Screen):
     """
     self.manager.transition.direction = direction
 
-  def login(self):
+  def login(self, app):
     from mysql.connector import connect
     conn = connect(
       host="localhost",
@@ -29,7 +29,8 @@ class Login(Screen):
 
     for user in users:
       if self.username_input.text == user[1] and self.password_input.text == user[3]:
-        self.add_widget(Label(text="Login success."))
+        # jika user ditemukan, redirect ke halaman menu
+        app.root.to("menu")
         return None
 
     print("Login failed.")
