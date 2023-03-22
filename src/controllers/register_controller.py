@@ -1,17 +1,11 @@
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
-from kivy.uix.screenmanager import Screen
+from .controller import Controller
 
 
-class Register(Screen):
+class Register(Controller):
   username_input = ObjectProperty()
   password_input = ObjectProperty()
-
-  def slide_to(self, direction):
-    """
-    Method untuk mengatur arah transisi.
-    """
-    self.manager.transition.direction = direction
 
   def register(self):
     print(self.username_input.text)

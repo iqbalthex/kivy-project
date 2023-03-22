@@ -1,0 +1,45 @@
+<Dione>:
+    ## id halaman
+    name: "dione"
+    title_label: title_label
+    icon: icon
+    Image:
+        source: "../img/default.jpg"
+        allow_stretch: True
+        keep_ratio: False
+        size_hint: 1, 1
+
+    BoxLayout:
+        size_hint: 1, 1
+        pos_hint: { "center_x": .5, "center_y": .5 }
+        orientation: "vertical"
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: 40
+            size_hint: 1, .5
+            pos_hint: { "center_x": .5 }
+
+            Label:
+                id: title_label
+                font_size: 20
+                bold: True
+                italic: True
+                text: "Selamat datang di\nhome page sederhanaku!!!"
+            Image:
+                id: icon
+                size_hint: .5, .5
+                opacity: 0
+
+    BoxLayout:
+        padding: 10, 0
+        Button:
+            font_size: 15
+            background_color: 1, 1, 0, 1
+            text: "Tentang"
+            on_press: root.about_me()
+        Button:
+            font_size: 15
+            background_color: 1, 1, 0, 1
+            text: "Kontak"
+            on_press: root.my_contact()
